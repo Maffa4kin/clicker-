@@ -1,7 +1,8 @@
-</DOCTYPE>
+
+<!DOCTYPE html>
 <html>
 <head>
-  <title>Кликер</title>
+  <title>Кликер с звуком</title>
   <style>
     #counter {
       font-size: 24px;
@@ -15,17 +16,23 @@
   </style>
 </head>
 <body>
-  <button id="clickButton">Нажм</button>
+  <h1>Кликер с звуком</h1>
+  <p>Нажмите на кнопку, чтобы увеличить количество кликов и проиграть звук</p>
+  <button id="clickButton">Нажми на меня!</button>
   <p id="counter">Количество кликов: 0</p>
+
+  <audio id="myAudio" src="https://zvukogram.com/zvuk/43597/" preload="auto"></audio>
 
   <script>
     let count = 0;
     const button = document.getElementById('clickButton');
     const counter = document.getElementById('counter');
+    const audio = document.getElementById('myAudio');
 
     button.addEventListener('click', function() {
       count++;
       counter.innerHTML = 'Количество кликов: ' + count;
+      audio.play();
     });
   </script>
 </body>
